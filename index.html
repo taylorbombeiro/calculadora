@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora penal - PF</title>
+    <link rel="icon" type="image/png" href="img/Policia_Federal-logo.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+
+<body>
+    <div id="content-wrapper">
+        <div id="logo-container">
+            <img src="img/logo.jpg" alt="Logotipo">
+        </div>
+
+        <h1 class="text-padding">👮‍♂️ CALCULADORA PENAL (Policia Federal) - AFTER</h1>
+        <form id="calculoForm">
+            <label for="numero_oficial">Passaporte do oficial:</label>
+            <input type="text" id="numero_oficial" required>
+
+            <label for="nome_oficial">Nome do oficial:</label>
+            <input type="text" id="nome_oficial" required>
+
+            <label for="participantes_oficial">Participantes:</label>
+            <select id="participantes_oficial" class="custom-select" name="Selecione um participante"
+                aria-placeholder="Adicione um participante" required>
+                <option value="" disabled selected hidden>Selecione um ou mais participantes:</option>
+                <optgroup label="Delegado Federal">
+                    <option value="<@636265526951280671>">Vasco Little</option>
+                    <option value="<@1075921831929843802>">Thaylor</option>
+                    <option value="<@1205536041415741563>">GuiGui</option>
+              
+                </optgroup>
+                <optgroup label="Sub-Delegado">
+                    <option value="">Nenhum</option>
+                </optgroup>
+                <optgroup label="Inspetor Chefe">
+                    <option value="">Nenhum</option>
+                </optgroup>
+                <optgroup label="Inspetor">
+                    <option value="<@769997800456716298>">Ratão</option>
+                    <option value="<@417654968980340746>">Undead Ghost</option>
+                    <option value="<@1173992263714611263>">Pardal</option>
+                    <option value="<@1069064867564240958>">Seu Madrugo</option>
+                    <option value="<@275811075533045761>">Fertop</option>
+                    <option value="<@943299670380257330>">Arsene Lupin</option>
+                    <option value="<@123420961348386816>">Guto Dias</option>
+
+                </optgroup>
+                <optgroup label="Perito Criminal">
+                    <option value="<@701187103803048026>">Lilithy</option>
+                </optgroup>
+                <optgroup label="Escrivão">
+                    <option value="">Nenhum</option>
+                </optgroup>
+                <optgroup label="Agente Especial">
+                    <option value="<@1127012375250358272>">Master</option>
+                    <option value="<@385241915613904904>">Shabba</option>
+                    <option value="<@698749329057513503>">Will Moscou^</option>
+                </optgroup>
+                <optgroup label="Agente Federal">
+                    <option value="<@609430550347776011>">Pedro</option>
+                    <option value="<@601697437958275082>">Montanha</option>
+                    <option value="<@755778089770025097>">Daniel Borges</option>
+                    <option value="<@1130946367922131005>">Cleitin</option>
+                    <option value="<@1029787200302366720>">Cawboy</option>
+                    <option value="<@298321765808078859>">Cairus</option>
+                    <option value="<@977924593832591380>">Cearense</option>
+                </optgroup>
+                <optgroup label="Agente 1ª Classe">
+                    <option value="">Nenhum</option>
+                </optgroup>
+                <optgroup label="Agente 2ª Classe">
+                    <option value="<@1145553276855660656>">Zoin</option>
+                    <option value="<@596025800009187368>">Hector Gama</option>
+                </optgroup>
+                <optgroup label="Agente 3ª Classe">
+                    <option value="<@745368162966568990>">Vulgo Ph</option>
+                    <option value="<@1196517799523258454>">Txr</option>
+                    <option value="<@729383361797161070>">Rick Moris</option>
+                    <option value="<@1219686555967291403>">Rag</option>
+                    <option value="<@1073136232206450768>">Oruam</option>
+                    <option value="<@996923705320026112>">Nairobi Hakuri</option>
+                    <option value="<@733106661056839703>">Mary Bella</option>
+                    <option value="<@893132198947983371>">LiliDoFertop</option>
+                    <option value="<@922843288829067274>">Drickinha</option>
+                    <option value="<@389029647708586004>">Dino</option>
+                    <option value="<@224690690402156544>">Maicon</option>
+                    <option value="<@833358633634627646>">Lord Johnson</option>
+                    <option value="<@1124481514508390511>">Fk07</option>
+                    <option value="<@313064276116111371>">Letthys Go</option>
+                    <option value="<@796890059956682793>">Yamada</option>
+                    <option value="<@1104416212647170069>">Gisento</option>
+                    <option value="<@1184932412774428822>">gugu</option>
+                    <option value="<@1208953740841848875>">Anna</option>
+                </optgroup>
+            </select>
+            <button class="" type="button" onclick="adicionarParticipante()">Adicionar Participantes</button>
+
+
+
+            <label>Enviar Foto do meliante:</label>
+            <div class="container-btn">
+
+                <button class="" type="button" onclick="carregarFotoUpload()" id="btnCarre">Carregar imagem</button>
+                <button class="" type="button" onclick="carregarFotoCntrl()" id="btnCntrl">Colar imagem</button>
+            </div>
+
+
+            <div class="hidden" id="meli_cntrl">
+                <label for="nome_oficial">Foto do Meliante:</label>
+                <input style="color:white" type="file" id="imagemInput" onchange="exibirPrevisualizacao()" accept="image/*">
+                <div id="imagemPrevisualizacao"></div>
+            </div>
+
+            <div class="hidden" id="fotoupload">
+                <label for="nome_oficial">Foto do Meliante (Cole com Ctrl+V):</label>
+                <textarea id="imagemInput" onpaste="handlePaste(event)" style="width: 300px; height: 100px;"></textarea>
+                <button type="button" onclick="limparImagem()">Limpar</button>
+                <div id="imagemPrevisualizacao2"></div>
+            </div>
+            <label for="numero_passaporte">Passaporte do Meliante:</label>
+            <input type="number" id="numero_passaporte" required>
+
+            <label for="crime_numero">Selecione o número do Art.:</label>
+            <select id="crime_numero" class="custom-select" required>
+                <option value="" disabled selected hidden>Selecione um ou mais artigos:</option>
+                <!-- Opções de crimes - remova ou adicione conforme necessário -->
+                <option value="11">DAR FUGA SEM TER FEITO NADA ILEGAL-PENA MÁXIMA</option>
+                <option value="12">Art.12 - USAR EQUIPAMENTO BALISTICO</option>
+                <option value="13">Art.13 - USAR EQUIPAMENTO POLICIAL</option>
+                <option value="14">Art.14 - USAR MASCARA DE OCULTAÇÃO DO ROSTO</option>
+                <option value="15">Art.15 - RESISTÊNCIA A PRISÃO (FUGIR)</option>
+                <option value="16">Art.16 - OMISSÃO DE SOCORRO</option>
+                <option value="17">Art.17 - DANO AO PATRIMONIO PÚBLICO</option>
+                <option value="18">Art.18 - INVASÃO</option>
+                <option value="19">Art.19 - DIFAMAÇÃO, INJURIA E CALUNIA</option>
+                <option value="20">Art.20 - FURTO</option>
+                <option value="21">Art.21 - PORTE DE BALAS EXCEDIDO</option>
+                <option value="22">Art.22 - FUGA DA ABORDAGEM POLICIAL</option>
+                <option value="23">Art.23 - TENTATIVA DE SUBORNO</option>
+                <option value="24">Art.24 - RECEPTAÇÃO</option>
+                <option value="25">Art.25 - TENTATIVA DE ROUBO</option>
+                <option value="26">Art.26 - FALSO TESTEMUNHO (PERJÚRIO)</option>
+                <option value="27">Art.27 - OBSTRUÇÃO DE JUSTIÇA</option>
+                <option value="28">Art.28 - DESOBEDIÊNCIA A ORDEM POLICAL</option>
+                <option value="29">Art.29 - APROPRIAÇÃO INDÉBITA</option>
+                <option value="30">Art.30 - INVASÃO DE PRIVACIDADE</option>
+                <option value="31">Art.31</option>
+                <option value="32">Art.32 - MULTAS PENDENTES</option>
+                <option value="33">Art.33 - DESORDEM E PERTURBAÇÃO DA PAZ</option>
+                <option value="34">Art.34 - PLACA CLONADA</option>
+                <option value="35">Art.35 - CORRIDA ILEGAL</option>
+                <option value="36">Art.36 - ASSALTO À CAIXA ELETRÔNICA</option>
+                <option value="37">Art.37 - ASSALTO À CAIXA REGISTRADORA</option>
+                <option value="38">Art.38 - ASSALTO A BANCO OU JOALHERIA</option>
+                <option value="39">Art.39 - ASSALTO À LOJA</option>
+                <option value="40">Art.40 - ASSALTO A CARRO FORTE</option>
+                <option value="41">Art.41 - PORTAR ALGEMA</option>
+                <option value="42">Art.42 - PORTAR LOCKPICK</option>
+                <option value="43">Art.43 - PORTAR MASTERPICK</option>
+                <option value="44">Art.44 - PORTAR PENDRIVE</option>
+                <option value="45">Art.45 - PORTAR KEYCARD</option>
+                <option value="46">Art.46 - PORTAR CAPUZ</option>
+                <option value="47">Art.47 - PORTE ILEGAL DE ARMA LEVE</option>
+                <option value="48">Art.48 - ESTELIONATO</option>
+                <option value="49">Art.49 - PORTE ILEGAL DE ARMA PESADA</option>
+                <option value="50">Art.50 - TRÁFICO DE DROGAS (A PARTIR DE 6 UNIDADES)</option>
+                <option value="51">Art.51 - CONSUMO PRÓPRIO DE DROGAS (5 UNIDADES)</option>
+                <option value="52">Art.52 - PORTAR DINHEIRO SUJO</option>
+                <option value="53">Art.53 - TRÁFICO DE ORGÃOS</option>
+                <option value="54">Art.54 - TRÁFICO DE MUNIÇÃO</option>
+                <option value="55">Art.55 - TRÁFICO DE ARMAS</option>
+                <option value="56">Art.56 - ABUSO DE AUTORIDADE</option>
+                <option value="57">Art.57 - DESACATO À AUTORIDADE</option>
+                <option value="58">Art.58 - EXTORÇÃO</option>
+                <option value="59">Art.59 - FALSIDADE IDEOLOGICA</option>
+                <option value="60">Art.60 - DENUNCIAÇÃO CALUNIOSA</option>
+                <option value="61">Art.61 - CORRUPÇÃO ATIVA E PASSIVA</option>
+                <option value="62">Art.62 - AMEAÇA</option>
+                <option value="63">Art.63 - ATO OBSCENO EM PÚBLICO</option>
+                <option value="64">Art.64 - PORTE ILEGAL DE ARMA BRANCA</option>
+                <option value="65">Art.65 - FURTO/ROUBO DE VEÍCULOS</option>
+                <option value="66">Art.66 - LESÃO CORPORAL</option>
+                <option value="67">Art.67 - SEQUESTRO</option>
+                <option value="68">Art.68 - DESTRUIÇÃO DE EVIDÊNCIA FÍSICA</option>
+                <option value="69">Art.69 - FORMAÇÃO DE QUADRILHA</option>
+                <option value="70">Art.70 - TENTATIVA DE HOMICÍDIO</option>
+                <option value="71">Art.71 - HOMICÍDIO CULPOSO (SEM INTENÇÃO DE MATAR)</option>
+                <option value="72">Art.72 - LATROCINIO (ROUBO SEGUIDO DE MORTE)</option>
+                <option value="73">Art.73 - TENTATIVA DE HOMICÍDIO A UM SERVIDOR PUBLICO</option>
+                <option value="74">Art.74 - HOMICÍDIO DOLOSO (COM INTENÇÃO DE MATAR)</option>
+                <option value="75">Art.75 - FEMINICÍDIO</option>
+                <option value="76">Art.76 - HOMICÍDIO A UM SERVIDOR PUBLICO</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <button type="button" onclick="adicionarCrime()">Adicionar Crime</button>
+
+            <button type="button" onclick="limparArtigos()">Limpar Artigos</button>
+
+
+            <div class="separator-line"></div>
+
+            <div class="checkbox-columns">
+                <div class="checkbox-container">
+                    <label class="checkbox-title">Atenuantes</label>
+
+                    <label for="confessarCrime">Confessar Crime:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="confessarCrime">
+                        <span class="slider"></span>
+                    </label>
+
+                    <label for="reuPrimario">Réu Primário:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="reuPrimario">
+                        <span class="slider"></span>
+                    </label>
+
+                    <label for="chamouAdvogado">Chamou Advogado:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="chamouAdvogado" class="botao-advogado">
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+                <div class="checkbox-container">
+                    <label class="checkbox-title">Agravantes</label>
+
+                    <label for="reuReincidenteMesmoCrime">Réu Reincidente Pelo Mesmo Crime:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="reuReincidenteMesmoCrime">
+                        <span class="slider"></span>
+                    </label>
+
+                    <label for="reuReincidenteCrimeDiferente">Réu Reincidente Por Crime Diferente:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="reuReincidenteCrimeDiferente">
+                        <span class="slider"></span>
+                    </label>
+
+                    <label for="usarVeiculoPublico">Utilizar Veículo Público Para Crime:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="usarVeiculoPublico">
+                        <span class="slider"></span>
+                    </label>
+
+                    <label for="desacato">Desacato:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="desacato">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="button" onclick="gerarRelatorio()">Gerar Relatório</button>
+
+            <div id="relatorio-container">
+                <span id="totalMesesVisor">Total de Meses: 0</span>
+                <h2>Relatório Penal</h2>
+                <pre id="relatorio"></pre>
+                <button type="button" id="btn-copiar" onclick="copiarRelatorio()">Copiar Relatório</button>
+                <button type="button" id="enviarDiscordButton" onclick="enviarRelatorioParaDiscord()">Enviar Relatório
+                    para
+                    Discord</button>
+
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>&copy; 2024 <a href="https://www.linkedin.com/in/guilherme-menoti-32a898249/">Guilherme Menoti</a>. Todos
+                os direitos reservados.</p>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    </form>
+
+
+    <script src="script.js"> </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+
+</html>

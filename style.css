@@ -1,0 +1,495 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedgwick+Ave+Display&display=swap');
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+   
+}
+
+#content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(198deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 9%, rgba(255,192,0,0.6643032212885154) 49%, rgba(0,0,0,1) 85%, rgba(0,0,0,1) 88%, rgba(0,0,0,1) 96%); 
+
+}
+
+.custom-select {
+    display: flex;
+    justify-content: start;
+    padding: 8px 8px;
+    font-size: 14px;
+    border: 2px solid #363636;
+    border-radius: 13px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+  
+  }
+
+  .text-padding {
+    font-family: "IBM Plex Mono", monospace;
+  }
+  
+  /* Estilizando as opções do select */
+  .custom-select option {
+    padding: 8px 16px;
+    font-size: 16px;
+
+    color: #333;
+    border-radius: 15px;
+  }
+  
+  /* Estilizando o hover e o foco */
+  .custom-select:hover,
+  .custom-select:focus {
+    border-color: #000000;
+  }
+  
+  /* Estilizando o hover das opções */
+  .custom-select option:hover {
+    background-color: #525252;
+  }
+
+
+#calculoForm{
+    border: 10px solid transparent;
+    border-width: 4px;
+    border-color: red;
+    transition: border-color 0.3s ease;
+    animation: animacao-borda 2s infinite;
+}
+
+
+
+
+
+@keyframes animacao-borda {
+    0% {
+        border-color: rgb(255, 255, 255);
+    }
+    25% {
+        border-color: rgb(255, 255, 255);
+    }
+    10% {
+        border-color: rgb(255, 255, 255);
+    }
+    100% {
+        border-color: rgb(255, 255, 255);
+    }
+}
+
+h1, h2 {
+    color: #ffffff;
+   
+}
+
+#logo-container {
+    width: 100%;
+    height: 8vh;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-bottom:  20px;
+    overflow: hidden;
+    display: flex;
+    background: #000000;
+    justify-content: center;
+  
+}
+
+#logo-container img {
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 26px;
+    
+   
+}
+
+form {
+    background-color: #161616;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-align: left;
+    font-weight: 500;
+}
+
+input, select {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #a52e2e;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    background-color: #6d0000;
+    transform: translateY(-5px) scale(1.05);
+}
+
+pre {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.separator-line {
+    margin: 20px 0;
+    border-top: 2px solid #a52e2e;
+}
+
+.checkbox-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkbox-container {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.checkbox-container label {
+    margin-bottom: 10px;
+}
+
+.checkbox-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #a52e2e;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4caf50;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4caf50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+#relatorio-container {
+    text-align: center;
+    max-width: 800px;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #4b1818;
+    margin-top: 30px;
+ 
+}
+
+
+#totalMesesVisor {
+    color: white;
+}
+
+
+.botao-advogado:disabled + .slider {
+    background-color: red;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #content-wrapper {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    #relatorio-container {
+        width: 100%;
+    }
+
+    .checkbox-columns {
+        flex-direction: column;
+    }
+
+    .checkbox-container {
+        width: 100%;
+    }
+
+    #logo-container {
+        width: 80%; 
+        margin: 0 auto;
+    }
+
+    #logo-container img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#crime_numero option[value="11"] {
+    background-color: #FF0000; 
+    color: #000000; 
+}
+
+
+#crime_numero option[value="12"],
+#crime_numero option[value="13"],
+#crime_numero option[value="14"],
+#crime_numero option[value="15"],
+#crime_numero option[value="16"],
+#crime_numero option[value="17"],
+#crime_numero option[value="18"],
+#crime_numero option[value="19"],
+#crime_numero option[value="20"],
+#crime_numero option[value="21"],
+#crime_numero option[value="22"],
+#crime_numero option[value="23"],
+#crime_numero option[value="24"],
+#crime_numero option[value="25"],
+#crime_numero option[value="26"],
+#crime_numero option[value="27"],
+#crime_numero option[value="28"],
+#crime_numero option[value="29"],
+#crime_numero option[value="30"],
+#crime_numero option[value="31"],
+#crime_numero option[value="32"],
+#crime_numero option[value="33"],
+#crime_numero option[value="34"],
+#crime_numero option[value="35"] {
+    background-color: #DAA520; 
+    color: #000000; 
+}
+
+
+#crime_numero option[value="36"],
+#crime_numero option[value="37"],
+#crime_numero option[value="38"],
+#crime_numero option[value="39"],
+#crime_numero option[value="40"],
+#crime_numero option[value="41"],
+#crime_numero option[value="42"],
+#crime_numero option[value="43"],
+#crime_numero option[value="44"],
+#crime_numero option[value="45"],
+#crime_numero option[value="46"],
+#crime_numero option[value="47"],
+#crime_numero option[value="48"],
+#crime_numero option[value="49"],
+#crime_numero option[value="50"],
+#crime_numero option[value="51"],
+#crime_numero option[value="52"],
+#crime_numero option[value="53"],
+#crime_numero option[value="54"],
+#crime_numero option[value="55"],
+#crime_numero option[value="56"],
+#crime_numero option[value="57"],
+#crime_numero option[value="58"],
+#crime_numero option[value="59"],
+#crime_numero option[value="60"],
+#crime_numero option[value="61"],
+#crime_numero option[value="62"],
+#crime_numero option[value="63"],
+#crime_numero option[value="64"],
+#crime_numero option[value="65"],
+#crime_numero option[value="66"],
+#crime_numero option[value="67"],
+#crime_numero option[value="68"],
+#crime_numero option[value="69"] {
+    background-color: #800080; 
+    color: #000000; 
+}
+
+
+#crime_numero option[value="70"],
+#crime_numero option[value="71"],
+#crime_numero option[value="72"],
+#crime_numero option[value="73"],
+#crime_numero option[value="74"],
+#crime_numero option[value="75"],
+#crime_numero option[value="76"] {
+    background-color: #FF0000; 
+    color: #000000; 
+}
+
+.popup-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-container.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: .4s ease;
+}
+
+
+.show-popup {
+    height: 100px;
+    width: 120px;
+    border: none;
+    background-color: #800080;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+
+.popup-container.active .popup-box {
+    transform: scale(1);
+    transition-delay: .25s;
+    transition: .4s ease;
+}
+
+
+.popup-container  .popup-box{
+  
+    width: 500px;
+    background: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px black;
+    padding: 30px;
+    transform: scale(.0);
+    
+
+}
+
+
+
+.container-btn {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+
+.footer {
+    font-size: 12px;
+    margin: 0;
+    color: white;
+
+}
+.footer a {
+    text-decoration: none;
+    color: red;
+   
+}
+
+
+@media only screen and (max-width: 450px) {
+    #content-wrapper {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .checkbox-columns {
+        flex-direction: column;
+    }
+
+    .checkbox-container {
+        width: 100%;
+        text-align: center; /* Alinhamento centralizado para o título do checkbox */
+    }
+
+    #logo-container {
+        width: 80%; 
+        margin: 0 auto;
+    }
+
+    #logo-container img {
+        width: 100%; /* Redimensionamento do logotipo */
+        height: auto;
+    }
+}
